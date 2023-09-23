@@ -419,27 +419,20 @@
 
     </footer>
     <script>
-        function getProgrammeLevel() {
-            var selectedProgrammeLevel = document.getElementById('programme_level').value;
-            localStorage.setItem('selectedProgrammeLevel', selectedProgrammeLevel);
+        // Function to apply ellipsis to the select options
+        function applyEllipsisToSelect() {
+            var selectElement = document.getElementById('programme_level');
+            var options = selectElement.options;
+            for (var i = 0; i < options.length; i++) {
+                var option = options[i];
+                if (option.offsetWidth < option.scrollWidth) {
+                    option.title = option.text;
+                }
+            }
         }
 
-        function getProgramme() {
-            var selectedProgramme = document.getElementById('programme').value;
-            localStorage.setItem('selectedProgramme', selectedProgramme);
-        }
-
-        function getProgramme1() {
-            var selectedProgramme1 = document.getElementById('programme1').value;
-            localStorage.setItem('selectedProgramme1', selectedProgramme1);
-        }
-
-        // Initialize the dropdowns with stored values
-        window.onload = function () {
-            document.getElementById('programme_level').value = localStorage.getItem('selectedProgrammeLevel');
-            document.getElementById('programme').value = localStorage.getItem('selectedProgramme');
-            document.getElementById('programme1').value = localStorage.getItem('selectedProgramme1');
-        };
+        // Apply ellipsis after a delay (e.g., 1 second)
+        setTimeout(applyEllipsisToSelect, 1000);
     </script>
 
     <!--====== FOOTER PART ENDS ======-->

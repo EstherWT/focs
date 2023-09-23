@@ -88,7 +88,7 @@ def enrollDegree():
     result = doc_cursor.fetchall()
     doc_cursor.close()
 
-    statement = "SELECT id, name FROM Stpm_subject"
+    statement = "SELECT id, grade FROM Stpm_subject"
     cursor = db_conn.cursor()
     cursor.execute(statement)
     subj = cursor.fetchall()

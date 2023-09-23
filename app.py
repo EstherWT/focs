@@ -354,7 +354,7 @@ def displayStaff():
 def staffDetails(staff_id):
 
     #Get Internship details
-    details_statement = """SELECT s.staff_id, s.staff_name, s.position, s.study_level, s.email, s.specialization, s.areaInterest, s.img d.depart_name FROM Staff s INNER JOIN Department d WHERE s.depart_id = d.depart_id AND staff_id = %s"""
+    details_statement = """SELECT s.staff_id, s.staff_name, s.position, s.study_level, s.email, s.specialization, s.areaInterest, s.img d.depart_name FROM Staff s INNER JOIN Department d ON s.depart_id = d.depart_id AND staff_id = %s"""
     cursor = db_conn.cursor()
     cursor.execute(details_statement, (staff_id))
     details = cursor.fetchone()

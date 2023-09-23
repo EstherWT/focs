@@ -520,6 +520,7 @@ def faq():
     return render_template('FAQ.html', inquiry=None)
     
 @app.route('/submitInquiry', methods=['POST'])
+@csrf.exempt 
 def submitInquiry():
     userName = request.form['userName']
     userEmail = request.form['userEmail']
@@ -552,6 +553,7 @@ def submitInquiry():
     return render_template('FAQ.html', inquiry=None)
 
 @app.route('/viewInquiry', methods=['GET','POST'])
+@csrf.exempt 
 def viewInquiry():
     inquiry_id = request.form['inquiry_id']
 

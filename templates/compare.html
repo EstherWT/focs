@@ -238,7 +238,7 @@
                                                         <labelfor="programme,programme1">Select a programme:</label></th>
                                                     <td>
                                                         <select name="programme" id="programme" style="width:200px; overflow:hidden; text-overflow:ellipsis;">
-                                                            <option value="">-- Select Programme --</option>
+                                                            <option value="" style="text-align:center">-- Select Programme --</option>
                                                             {% for program in programmes %}
                                                             <option value="{{ program[0] }}">{{ program[2] }}</option>
                                                             {% endfor %}
@@ -248,7 +248,7 @@
                                                         <select name="programme1" id="programme1">
                                                             <option value="">-- Select Programme --</option>
                                                             {% for program1 in programmes1 %}
-                                                            <option value="{{ program1[0] }}">{{ program1[2] }}</option>
+                                                            <option value="{{ program1[0] }}" style="text-align:center">{{ program1[2] }}</option>
                                                             {% endfor %}
                                                         </select>
                                                     </td>

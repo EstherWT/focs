@@ -313,14 +313,14 @@ def enrollDiploma():
         else:
             return render_template("enrollSuccess.html")
 
-   if academic_type == '2':  # Diploama
+    if academic_type == '2':  # Diploama
         cgpa = request.form.get('cgpa')
         if(cgpa < 2):
             return render_template("enrollFail.html", mismatched = [])
         else:
             return render_template("enrollSuccess.html")
 
-  return render_template("enrollFail.html", mismatched = [])
+    return render_template("enrollFail.html", mismatched = [])
 
 
 

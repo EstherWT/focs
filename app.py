@@ -315,7 +315,7 @@ def enrollDegreeSubmit():
 
     if academic_type == '2':  # Diploama
         cgpa = request.form.get('cgpa')
-        if(cgpa < 2):
+        if(cgpa[0] < "2"):
             return render_template("enrollFail.html", mismatched = [])
         else:
             return render_template("enrollSuccess.html")

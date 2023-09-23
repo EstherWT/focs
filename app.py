@@ -94,7 +94,7 @@ def enrollDegree():
     subj = cursor.fetchall()
     cursor.close()
 
-    grad_statement = "SELECT value, name FROM Stpm_grade"
+    grad_statement = "SELECT id, name FROM Stpm_grade"
     grad_cursor = db_conn.cursor()
     grad_cursor.execute(grad_statement)
     grad = grad_cursor.fetchall()

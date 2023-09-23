@@ -280,7 +280,49 @@ def enrollDiploma():
             insert_cursor.close()
 
     return render_template("enrollSuccess.html")
+
+
+@app.route("/enrollDegree", methods=['POST'])
+@csrf.exempt
+def enrollDiploma():
+
+    # Retrieve subject and grade data (loop through the fields)
+    subjects = []
+    grades = []
+
+    academic_type = request.form.get('academic_type')
+
+    if academic_type == '1':  # STPM
     
+        for i in range(1, 5):  # Assuming there are 10 subject and grade pairs
+            subject = request.form.get(f'subject{i}')
+            grade = request.form.get(f'grade{i}')
+            if subject and grade:
+                subjects.append(subject)
+                grades.append(grade)
+    
+        
+        credit_number = 0
+        
+        for user_grade in grades:
+            if user_grade <= '3':
+                credit_number += 1
+    
+        if(credit_number < 2):
+            return render_template("enrollFail.html", mismatched = [])
+        else:
+            return render_template("enrollSuccess.html")
+
+   if academic_type == '2':  # Diploama
+        cgpa = request.form.get('cgpa')
+        if(cgpa < 2):
+            return render_template("enrollFail.html", mismatched = [])
+        else:
+            return render_template("enrollSuccess.html")
+
+  return render_template("enrollFail.html", mismatched = [])
+
+
 
     
 #---------------------------------------------------

@@ -81,7 +81,7 @@ def enroll():
     return render_template('enroll.html', campus=result, subject=subj, grade = grad, totalSubj = st)
 
 @app.route("/enrollDegree", methods=['GET', 'POST'])
-def enroll():
+def enrollDegree():
     doc_statement = "SELECT id, name FROM Campus"
     doc_cursor = db_conn.cursor()
     doc_cursor.execute(doc_statement)

@@ -195,6 +195,27 @@
                        </nav> <!-- courses pagination -->
                    </div>
                </div> <!-- row -->
+            {% elif name[0] == 3: %}
+            <div id="page-banner" class="bg_cover mt-25 pt-25 pb-25 row" data-overlay="8" style="background-image: url( {{ url_for('static', filename='images/page-banner-2.jpg') }} )">
+                   <div class="col-lg-6">
+                       <nav class="courses-pagination">
+                           <ul class="pagination justify-content-center">
+                               <ul class="nav" id="myTab" role="tablist">
+                                   <a href="{{ url_for('compare_prog') }}" class="main-btn">Programme Comparation</a>
+                               </ul> <!-- nav -->
+                           </ul>
+                       </nav> <!-- courses pagination -->
+                   </div>
+                   <div class="col-lg-6">
+                       <nav class="courses-pagination">
+                           <ul class="pagination justify-content-center">
+                               <ul class="nav" id="myTab" role="tablist">
+                                   <a href="/enrollDegree" class="main-btn">Degree Enrollment</a>
+                               </ul> <!-- nav -->
+                           </ul>
+                       </nav> <!-- courses pagination -->
+                   </div>
+               </div> <!-- row -->
            {% else: %}
               <div id="page-banner" class="bg_cover mt-25 pt-25 pb-25 row" data-overlay="8" style="background-image: url( {{ url_for('static', filename='images/page-banner-2.jpg') }} )">
                    <div class="col-lg-12">

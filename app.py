@@ -282,9 +282,9 @@ def enrollDiploma():
     return render_template("enrollSuccess.html")
 
 
-@app.route("/enrollDegree", methods=['POST'])
+@app.route("/enrollDegreeSubmit", methods=['POST'])
 @csrf.exempt
-def enrollDiploma():
+def enrollDegreeSubmit():
 
     # Retrieve subject and grade data (loop through the fields)
     subjects = []

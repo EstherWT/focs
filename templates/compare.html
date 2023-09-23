@@ -45,6 +45,12 @@
     <!--====== Responsive css ======-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
 
+    select{
+            width:200px; 
+            overflow: hidden; 
+            text-overflow:ellipsis;
+    }
+    
 </head>
 
 <body>
@@ -185,7 +191,7 @@
                             <div class="container">
                                 <div class="col-md-9 mx-auto">
                                     <form>
-                                        <table class="table">
+                                        <table class="table" >
                                             <!--Programme Level-->
                                             <tr class="bg-light">
                                                 {% if session['compare_level']: %}

@@ -42,7 +42,7 @@
                                     </li>
                                   
                                     <li class="nav-item">
-                                        <a href="courses.html">Facilities</a>
+                                        <a href="{{ url_for('facility') }}">Facilities</a>
                                         <!-- <ul class="sub-menu">
                                             <li><a href="courses.html">Courses</a></li>
                                             <li><a href="courses-singel.html">Course Singel</a></li>
@@ -58,10 +58,11 @@
                                         </ul>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="/displayStaff">Staff</a>
-                                        
+                                        <a href="/displayStaff">Staff</a> 
                                     </li>
-                                   
+                                    <li class="nav-item">
+                                        <a href="{{ url_for('faq') }}">FAQ</a>
+                                    </li>
                                 </ul>
                             </div>
                         </nav> <!-- nav -->

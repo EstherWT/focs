@@ -306,9 +306,10 @@ def enrollDegreeSubmit():
         credit_number = 0
         
         for user_grade in grades:
-            user_grade = int(user_grade)  
-            if user_grade <= '3':
-                credit_number += 1
+            if user_grade != None
+                user_grade = int(user_grade)  
+                if user_grade <= 3:
+                    credit_number += 1
     
         if(credit_number < 2):
             return render_template("enrollFail.html", mismatched = [])

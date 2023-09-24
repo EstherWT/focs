@@ -213,7 +213,7 @@ def enrollDiploma():
     credit_number = 0
     
     for user_grade in grades:
-        if user_grade <= '7':
+        if user_grade <= 7:
             credit_number += 1
 
     if(credit_number < 3 or mismatched_subjects):
